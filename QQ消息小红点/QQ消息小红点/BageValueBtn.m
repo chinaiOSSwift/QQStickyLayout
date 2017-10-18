@@ -108,15 +108,18 @@
             NSMutableArray *animationArr = [NSMutableArray array];
             
             /* 这里添加图片
-            for (int i = 0; i < 8; i ++) {
-                UIImage *temImage = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jgp",i]];
-                [animationArr addObject:temImage];
-            }*/
+             for (int i = 0; i < 8; i ++) {
+             UIImage *temImage = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jgp",i]];
+             [animationArr addObject:temImage];
+             }*/
             imageV.animationImages = animationArr;
             imageV.animationDuration = 1; // 动画时长
             imageV.animationRepeatCount = 1;// 重复次数
             [imageV startAnimating];
             [self addSubview:imageV];
+            
+            
+            
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self removeFromSuperview];
